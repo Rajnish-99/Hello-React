@@ -1,0 +1,31 @@
+{
+  "name": "learning_react",
+  "version": "1.0.0",
+  "description": "This is Namaste React fundamentals ",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rajnish-99/Hello-React.git"
+  },
+  "keywords": [
+    "react",
+    "leanrning",
+    "coding"
+  ],
+  "author": "rajnish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rajnish-99/Hello-React/issues"
+  },
+  "homepage": "https://github.com/Rajnish-99/Hello-React#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
