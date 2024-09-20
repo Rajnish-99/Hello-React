@@ -12,8 +12,10 @@ const heading = React.createElement(
   "Namaste React 🚀"
 );
 // jsx is separate html like syntax 
-
-const jsxHeading = <h1 id ="heading"> Namaste React using JSX ⭐️</h1>
+// it is js and html kind of fix 
+// in html we use class but in jsx we use classheading
+//jsx uses the camelcase and bit different attributes as compared to the html
+const jsxHeading = <h1  className="heading"> Namaste React using JSX ⭐️</h1>
 
 // 
 
