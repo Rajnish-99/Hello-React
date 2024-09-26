@@ -16,5 +16,24 @@
 - HTTPS can also be there using parcel 
 - Tree shaking algo ( Remove unused code for you)
 
+# Food ordering app 
+
+/**
+ * Header
+ * - Logo
+ * - Nav Items
+ *`
+ * Body
+ * - Search
+ * - RestaurantConatiner
+ *   - RestaurnantCard
+ *      - Img
+ *      - Name of res, star rating , cusisines, delivery time
+ *
+ * Footer
+ * - Cpoyright
+ * - Links
+ * - Address
+ */
 
 
