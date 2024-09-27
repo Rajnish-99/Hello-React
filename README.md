@@ -37,3 +37,14 @@
  */
 
 
+# Two types of Export / Import 
+
+
+1.
+export default Component;
+import component from "path";
+
+2.
+export const component 
+import {component} from "Path"
+
