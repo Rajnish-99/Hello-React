@@ -5,7 +5,7 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
-  const [searchText,setsearchText] = useState("")
+  const [searchText, setsearchText] = useState("");
   // first body will render than the useEffect will be callled
   useEffect(() => {
     fetchData();
@@ -20,12 +20,12 @@ const Body = () => {
     console.log(json);
 
     console.log(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+      json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
     );
 
     // this is optional chaining which will prevent the code from error and breakage
     setlistOfRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
 
     console.log(listOfRestaurants);
@@ -42,11 +42,20 @@ const Body = () => {
         <div className="search">
           <input type="text" className="searh-box"></input>
           <button
-            className="search-button" value={searchText} onChange={(e)=>{setsearchText(e.target.value)}}
+            className="search-button"
+            value={searchText}
+            onChange={(e) => {
+              setsearchText(e.target.value);
+            }}
             onClick={() => {
               // filter the restaurnant cards and update the UI accordingly
-              alert("Ranu beta masti nahi");
-              console.log(searchText)
+              // alert("Ranu beta masti nahi");
+
+              console.log(searchText);
+              const filteredRes = listOfRestaurants.filter((res) => {
+                res.info.name.includes(searchText);
+              });
+              setlistOfRestaurants(filteredRes)
             }}
           >
             Search
