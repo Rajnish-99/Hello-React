@@ -8,7 +8,7 @@ const RestaurnantCards = (props) => {
     // code looks ugly we will clear the mess
     // destructure this
   
-    const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } =
+    const { cloudinaryImageId, name, cuisines, avgRating, costForTwo,sla } =
       resData?.info;
     return (
       <div className="res-card" style={{ background: "#f0f0f0" }}>
@@ -20,10 +20,11 @@ const RestaurnantCards = (props) => {
             cloudinaryImageId
           }
         />
-        <h4>{cuisines.join(",")}</h4>
+        <h3>{name}</h3>
         <h4>{avgRating}</h4>
         <h4>{costForTwo}</h4>
-        <h3>{name}</h3>
+        <h4>{cuisines.join(",")}</h4>
+        <h4>{sla?.slaString}</h4>
       </div>
     );
   };
