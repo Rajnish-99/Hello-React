@@ -13,19 +13,19 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.9615398&lng=79.2961468&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4941463&lng=77.0809093&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
     console.log(json);
 
     console.log(
-      json.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
     );
 
     // this is optional chaining which will prevent the code from error and breakage
     setlistOfRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
 
     console.log(listOfRestaurants);
@@ -40,22 +40,30 @@ const Body = () => {
     <div className="body">
       <div className="filter">
         <div className="search">
-          <input type="text" className="searh-box"></input>
-          <button
-            className="search-button"
+          <input
+            type="text"
+            className="searh-box"
             value={searchText}
             onChange={(e) => {
               setsearchText(e.target.value);
             }}
+          ></input>
+          <button
+            className="search-button"
             onClick={() => {
               // filter the restaurnant cards and update the UI accordingly
-              // alert("Ranu beta masti nahi");
 
               console.log(searchText);
-              const filteredRes = listOfRestaurants.filter((res) => {
-                res.info.name.includes(searchText);
-              });
-              setlistOfRestaurants(filteredRes)
+              const filteredRes = listOfRestaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              // console.log(res);
+              // res.info.name.includes(searchText);
+
+              //console.log(res.info.name);
+
+              // console.log(filteredRes);
+              // setlistOfRestaurants(filteredRes);
             }}
           >
             Search
