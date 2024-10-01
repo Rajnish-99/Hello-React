@@ -1,11 +1,12 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 // functional component of the header
 const Header = () => {
   // let btnName = "Login";
   const [btnNameReact, setbtnNameReact] = useState("Login");
-  console.log("Header Rendered called again and again")
+  console.log("Header Rendered called again and again");
   return (
     <div className="header">
       <div className="logo-container">
@@ -14,16 +15,29 @@ const Header = () => {
 
       <div className="nav-item">
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+
+          {/* <li>
+          // this renders the whole page 
+            <a href="/About">About Us</a>
+          </li> */}
+          <li>
+            <Link to="/About">About Us</Link>
+          </li>
+          <li>
+            <Link to="/Contact">Contact Us</Link>
+          </li>
           <li>Cart</li>
           <button
             className="Login-button"
             onClick={() => {
               // btnName = "Logout";
-              // toggle between login and logout 
-              btnNameReact ==="Login"? setbtnNameReact("Logout"): setbtnNameReact("Login");
+              // toggle between login and logout
+              btnNameReact === "Login"
+                ? setbtnNameReact("Logout")
+                : setbtnNameReact("Login");
               // setbtnNameReact("Logout");
               // alert("Button Dab gya lakin kcuh hua nahi h")
             }}

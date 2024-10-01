@@ -4,7 +4,7 @@
   "description": "This is Namaste React fundamentals ",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html", 
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -27,7 +27,10 @@
     "process": "^0.11.10"
   },
   "dependencies": {
+    "DOM": "^0.0.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "router": "^1.3.8"
   }
 }
