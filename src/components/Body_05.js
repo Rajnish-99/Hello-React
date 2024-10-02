@@ -2,13 +2,13 @@ import RestaurnantCards from "./RestaurantCards";
 // import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
 
-  // state variable for filtered restaurnant 
+  // state variable for filtered restaurnant
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-
 
   const [searchText, setsearchText] = useState("");
   // first body will render than the useEffect will be callled
@@ -27,7 +27,7 @@ const Body = () => {
     console.log(
       json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
     );
-    // destructuring 
+    // destructuring
     // this is optional chaining which will prevent the code from error and breakage
     setlistOfRestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -82,7 +82,7 @@ const Body = () => {
           className="filter-btn"
           onClick={() => {
             const filterList = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4.3
+              (res) => res.info.avgRating > 4.1
             );
             setFilteredRestaurants(filterList);
           }}
@@ -93,8 +93,13 @@ const Body = () => {
 
       <div className="res-container">
         {console.log(listOfRestaurants)}
-        {filteredRestaurants.map((info, index) => (
-          <RestaurnantCards key={index} resData={info} />
+        {filteredRestaurants.map((restaurant, index) => (
+          <Link
+            to={"restaurant/" + restaurant.info.id}
+            key={restaurant.info.id}
+          >
+            <RestaurnantCards resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
