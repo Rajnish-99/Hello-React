@@ -8,8 +8,8 @@
     }
     render(){
         return(<div className="user-card">
-            <h2>Name:Rajnish</h2>
-            <h3>Location:Delhi</h3>
+            <h2>Name:{this.props.name}</h2>
+            <h3>Location:{this.props.location}</h3>
         </div>);
     }
  }

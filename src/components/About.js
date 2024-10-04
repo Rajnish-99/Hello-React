@@ -7,7 +7,7 @@ const About = () => {
       <h1>About Us</h1>
       <h2>This is React deep dive</h2>
       <User name ={"Rajnish Ranjan(Function)"}/>
-      <UserClass name={"Rajnish Ranjan (Class)"}/>
+      <UserClass name={"Rajnish Ranjan (Class)"} location={"Dehradun (Class)"}/>
     </div>
   );
 };
