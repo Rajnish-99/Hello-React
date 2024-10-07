@@ -32,5 +32,6 @@
     }
  }
  // class component useState method deep dive
+ // class component useState method understood completely
 
  export default UserClass;
