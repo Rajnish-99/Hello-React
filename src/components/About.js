@@ -8,7 +8,7 @@ class About extends React.Component{
   constructor(props){
     super(props);
 
-    console.log("parent constructor called");
+    console.log("parent constructor called is first");
   }
   componentDidMount(){ console.log("Parent child is mounted ")  }
   render(){
