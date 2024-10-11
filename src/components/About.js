@@ -10,7 +10,7 @@ class About extends React.Component{
 
     console.log("parent constructor called is first");
   }
-  componentDidMount(){ console.log("Parent child is mounted ")  }
+  componentDidMount(){ console.log("Parent component mount is called ")  }
   render(){
     console.log("parent render called");
     return(
@@ -19,6 +19,7 @@ class About extends React.Component{
         <h2>This is React deep dive</h2>
         {/* <User name ={"Rajnish Ranjan(Function)"}/> */}
         <UserClass name={"Rajnish Ranjan (Class)"} location={"Dehradun (Class)"}/>
+        <UserClass name={"Rajnish Ranjan (Class2)"} location={"Dehradun (Class2)"}/>
       </div>
     );
   }

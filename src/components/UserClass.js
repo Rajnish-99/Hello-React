@@ -14,8 +14,8 @@
         console.log("child constructor called");
     }
 
-    componentDidCatch(){
-        console.log("Parent componentDidCatch did mount called");
+    componentDidMount(){
+        console.log("Child component mount called");
     }
     render(){
         console.log("child render called");
@@ -31,9 +31,6 @@
         </div>);
     }
  }
- // class component useState method deep dive
- // class component useState method understood completely
- // hands on practice of class component useState method
- // class component almost done
+
 
  export default UserClass;
