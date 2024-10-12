@@ -18,7 +18,7 @@ class About extends React.Component{
         <h1>About Class Component</h1>
         <h2>This is React deep dive</h2>
         {/* <User name ={"Rajnish Ranjan(Function)"}/> */}
-        <UserClass name={"Rajnish Ranjan (Class)"} location={"Dehradun (Class)"}/>
+        <UserClass name={"Rajnish Ranjan (Class1)"} location={"Dehradun (Class1)"}/>
         <UserClass name={"Rajnish Ranjan (Class2)"} location={"Dehradun (Class2)"}/>
       </div>
     );
