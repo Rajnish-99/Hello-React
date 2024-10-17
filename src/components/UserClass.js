@@ -7,6 +7,7 @@
         // earlier we used useState hook to maintain state
         // now we will use this.state
         // this.state is an object
+        // we can define as many as key value pairs in this object
         this.state = {
             count :0,
             count2:2,
