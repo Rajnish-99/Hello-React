@@ -1,7 +1,7 @@
  import React from "react";
  
  class UserClass extends React.Component{
-
+// constructor is called first 
     constructor(props){
         super(props);
         // earlier we used useState hook to maintain state
@@ -14,10 +14,13 @@
         };
         console.log("child constructor called");
     }
-
+// componentDidMount called third
     componentDidMount(){
         console.log("Child component mount called");
+        // api call is made here and 
     }
+
+    // render method is called second
     render(){
         console.log("child render called");
         return(<div className="user-card">

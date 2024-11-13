@@ -2,7 +2,7 @@ import User from "./User";
 import UserClass from "./UserClass"; 
 import React from "react";
 
-// creating a class based component of the below component
+// creating a class based component of the below functional  component
 
 class About extends React.Component{
   constructor(props){
@@ -19,14 +19,14 @@ class About extends React.Component{
         <h2>This is React deep dive</h2>
         {/* <User name ={"Rajnish Ranjan(Function)"}/> */}
         <UserClass name={"Rajnish Ranjan (Class 1)"} location={"Dehradun (Class 1)"}/>
-        <UserClass name={"Rajnish Ranjan (Class 2)"} location={"Dehradun (Class 2)"}/>
+        <UserClass name={"Elon Musk (Class 2)"} location={"USA(Class 2)"}/>
       </div>
     );
   }
 }
 
 
-
+// funcntional based component
 
 // const About = () => {
 //   return (
