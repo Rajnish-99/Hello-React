@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   // let btnName = "Login";
   const [btnNameReact, setbtnNameReact] = useState("Login");
-  console.log("Header Rendered called again and again");
+  // console.log("Header Rendered called again and again");
   return (
     <div className="header">
       <div className="logo-container">
