@@ -22,10 +22,9 @@ class About extends React.Component {
         {/* <User name ={"Rajnish Ranjan(Function)"}/> */}
         <UserClass
           // two different instances of same class
-          name={"Rajnish Ranjan (Class 1)"}
-          location={"Dehradun (Class 1)"}
+          name={"Rajnish Ranjan "}
+          location={"Dehradun "}
         />
-        <UserClass name={"Elon Musk (Class 2)"} location={"USA(Class 2)"} />
       </div>
     );
   }

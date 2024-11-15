@@ -9,36 +9,36 @@ class UserClass extends React.Component {
     // this.state is an object
     // we can define as many as key value pairs in this object
     this.state = {
-      count: 0,
-      count2: 2,
+      userInfo: {
+        name: "Dummy",
+        location: "Dummy location",
+      },
     };
-    console.log(this.props.name + "child constructor called");
+    //console.log(this.props.name + "child constructor called");
   }
   // componentDidMount called third
 
   // how to make api call in class based component
-  componentDidMount() {
-    console.log(this.props.name + "Child component mount called");
+  async componentDidMount() {
+    //console.log(this.props.name + "Child component mount called");
     // api call is made here and
+    const data = await fetch("https://api.github.com/users/rajnish-99");
+    const json = await data.json();
+
+    this.setState({
+      userInfo: json,
+    });
+
+    console.log(json);
   }
 
   // render method is called second
   render() {
-    console.log(this.props.name + "child render called");
+    //console.log(this.props.name + "child render called");
     return (
       <div className="user-card">
-        <h1>Count= {this.state.count}</h1>
-        {/* <h1>Count2= {this.state.count2}</h1> */}
-        <button
-          onClick={() => {
-            this.setState({ count: this.state.count + 1 });
-          }}
-        >
-          Increment
-        </button>
-        {/* {console.log(this.statecount)} */}
-        <h2>Name:{this.props.name}</h2>
-        <h3>Location:{this.props.location}</h3>
+        <h2>Name: {this.state.userInfo.name}</h2>
+        <h3>Location: {this.state.userInfo.location}</h3>
       </div>
     );
   }
