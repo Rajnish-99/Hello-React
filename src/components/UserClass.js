@@ -12,6 +12,7 @@ class UserClass extends React.Component {
       userInfo: {
         name: "Dummy",
         location: "Dummy location",
+        avatar_url: "dummy-photo"
       },
     };
     //console.log(this.props.name + "child constructor called");
@@ -36,7 +37,9 @@ class UserClass extends React.Component {
   render() {
     //console.log(this.props.name + "child render called");
     return (
+        
       <div className="user-card">
+        <img src={this.state.userInfo.avatar_url}></img>
         <h2>Name: {this.state.userInfo.name}</h2>
         <h3>Location: {this.state.userInfo.location}</h3>
       </div>
@@ -45,3 +48,22 @@ class UserClass extends React.Component {
 }
 
 export default UserClass;
+
+
+/* sequence in which things are working 
+
+* -------Mounting ------
+* Render (dummy)
+*      <HTML Dummy>
+* Component Did mount Called 
+*      <API Call>
+*      <this.setState-> State Variable is updated>
+*-------Update------
+* render(API Data)
+* <HTML (New API Data)
+* componentDid Update
+
+
+
+
+*/
