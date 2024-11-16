@@ -1,25 +1,28 @@
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { MENU_API } from "../utils/constants";
 const RestaurnantMenu = () => {
-  const [resInfo, setresInfo] = useState(null);
+  // const [resInfo, setresInfo] = useState(null);
   //   const params = useParams();
   //   console.log(params)
+  const { resId } = useParams();
+
+  /* custom hook implementation  */
+  const resInfo = useRestaurnantMenu(resId);
 
   // using destructing on the fly
-  const { resId } = useParams();
-  // make a api call to get the data
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-  // since above the dependency array is empty this will make single api call
-  const fetchMenu = async () => {
-    const data = await fetch(MENU_API + resId);
-    const json = await data.json();
-    console.log(json);
-    setresInfo(json.data);
-  };
+
+  // // make a api call to get the data
+  // useEffect(() => {
+  //   fetchMenu();
+  // }, []);
+  // // since above the dependency array is empty this will make single api call
+  // const fetchMenu = async () => {
+  //   const data = await fetch(MENU_API + resId);
+  //   const json = await data.json();
+  //   console.log(json);
+  //   setresInfo(json.data);
+  // };
   if (resInfo === null) return <Shimmer />;
 
   const { name, cuisines, costForTwoMessage } =
