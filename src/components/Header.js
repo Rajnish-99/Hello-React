@@ -1,12 +1,14 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 // functional component of the header
 const Header = () => {
   // let btnName = "Login";
   const [btnNameReact, setbtnNameReact] = useState("Login");
   // console.log("Header Rendered called again and again");
+  const onlineStatus = useOnlineStatus();
   return (
     <div className="header">
       <div className="logo-container">
@@ -15,6 +17,8 @@ const Header = () => {
 
       <div className="nav-item">
         <ul>
+          
+          <li>Online Status: {onlineStatus?"✅":"🔴"}</li>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -28,6 +32,9 @@ const Header = () => {
           </li>
           <li>
             <Link to="/Contact">Contact Us</Link>
+          </li>
+          <li>
+            <Link to="/Grocery">Kitchen Essentials </Link>
           </li>
           <li>Cart</li>
           <button

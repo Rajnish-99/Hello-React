@@ -1,1 +1,0 @@
-// new component 2 for self practice

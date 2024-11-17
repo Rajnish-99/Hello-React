@@ -1,6 +1,6 @@
 // take is cheap show me the code
 // food ordering app from the scratch
-import React from "react";
+import React, {lazy,Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body_05";
@@ -9,8 +9,14 @@ import About from "./components/about";
 import Contact from "./components/contact";
 import Error from "./components/Error";
 import RestaurnantMenu from "./components/RestaurantMenu";
+//import Grocery from "./components/Grocery";
 
+// lazy import 
+// this takes a call back function 
+// this one line code can do magical things on our app 
 
+// grocery code has been separated 
+const Grocery = lazy(()=> import ("./components/Grocery"))
 
 // function component of the app
 const AppLayout = () => {
@@ -40,6 +46,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/Contact",
         element: <Contact />,
+      },
+      {
+        path: "/Grocery",
+        element: <Suspense fallback={<h1>Load Ho rha h beta </h1>}><Grocery /></Suspense>,
       },
       {
         path: "/restaurant/:resId",
