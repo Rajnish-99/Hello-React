@@ -10,13 +10,13 @@ const Header = () => {
   // console.log("Header Rendered called again and again");
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="header">
+    <div className="flex justify-between bg-pink-600 px-2">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} />
+        <img className="w-56" src={LOGO_URL} />
       </div>
 
       <div className="nav-item">
-        <ul>
+        <ul className="flex p-4 m-4">
           
           <li>Online Status: {onlineStatus?"✅":"🔴"}</li>
           <li>
