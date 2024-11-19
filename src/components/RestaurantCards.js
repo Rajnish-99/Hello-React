@@ -11,19 +11,21 @@ const RestaurnantCards = (props) => {
     const { cloudinaryImageId, name, cuisines, avgRating, costForTwo,sla } =
       resData?.info;
     return (
-      <div className="res-card" style={{ background: "#f0f0f0" }}>
+      <div className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-300" >
         <img
-          className="meghna-img"
+          className="rounded-lg"
           // src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/fa/13/d3/paneer-biryani.jpg?w=1200&h=-1&s=1"
           src={
             CDN_URL +
             cloudinaryImageId
           }
         />
-        <h3>{name}</h3>
+        <h3 className="font-bold py-2 text-lg">{name}</h3>
         <h4>{avgRating}</h4>
         <h4>{costForTwo}</h4>
-        <h4>{cuisines.join(",")}</h4>
+        {/* <h4>{cuisines.join(",")}</h4> */}
+        <h4>{cuisines.slice(0, 3).join(",")}{cuisines.length > 3 ? "" : ""}</h4>
+
         <h4>{sla?.slaString}</h4>
       </div>
     );
