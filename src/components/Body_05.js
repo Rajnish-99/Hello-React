@@ -102,8 +102,8 @@ const Body = () => {
         </div>
       </div>
 
-      <div className="flex wrap">
-        {console.log(listOfRestaurants)}
+      <div className="flex flex-wrap gap-9">
+        {/* {console.log(listOfRestaurants)} */}
         {filteredRestaurants.map((restaurant, index) => (
           <Link
             to={"restaurant/" + restaurant.info.id}
