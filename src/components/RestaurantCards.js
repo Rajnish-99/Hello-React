@@ -31,4 +31,22 @@ const RestaurnantCards = (props) => {
     );
   };
 
+
+  // higher order component 
+
+  // input -restuarnant ==> restaurnant open or not 
+
+  // higher order component
+export const withOpenLabel = (RestaurnantCards)=>{
+    // return a new component  
+    return (props)=>{
+      return(
+        <div>
+          <label className="absolute bg-green-400 text-white m-1 p-1 rounded-lg">Pure Veg</label>
+          <RestaurnantCards {...props}/>
+        </div>
+      );
+    };
+  };
+
   export default RestaurnantCards;

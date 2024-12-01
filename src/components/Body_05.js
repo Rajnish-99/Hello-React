@@ -1,9 +1,10 @@
-import RestaurnantCards from "./RestaurantCards";
+import RestaurnantCards,{withOpenLabel}from "./RestaurantCards";
 // import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+
 
 const Body = () => {
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
@@ -13,6 +14,8 @@ const Body = () => {
 
   const [searchText, setsearchText] = useState("");
   // first body will render than the useEffect will be callled
+  const RestaurantCardOpen = withOpenLabel(RestaurnantCards)
+  console.log(listOfRestaurants)
   useEffect(() => {
     fetchData();
   }, []);
@@ -102,14 +105,18 @@ const Body = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-9">
+      <div className="flex flex-wrap">
         {/* {console.log(listOfRestaurants)} */}
         {filteredRestaurants.map((restaurant, index) => (
           <Link
             to={"restaurant/" + restaurant.info.id}
             key={restaurant.info.id}
           >
-            <RestaurnantCards resData={restaurant} />
+            {/** if the restaurnant is open then show it  */}
+            {
+              restaurant.info.veg? <RestaurantCardOpen resData={restaurant}/>:<RestaurnantCards resData={restaurant} />
+            }
+            
           </Link>
         ))}
       </div>
